@@ -31,6 +31,7 @@ import java.util.function.Function;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class EitherTests {
     @Test
@@ -83,5 +84,17 @@ class EitherTests {
         assertThrows(NullPointerException.class, () -> Either.left(null));
         assertEquals("Hello", l.getLeftOrElseGet(rh -> "bye"));
         assertEquals(new Integer(1), l.getRightOrElseGet(lv -> 1));
+    }
+
+    @Test
+    @DisplayName("Tests the cond function")
+    void condTest() {
+        Either<String, Integer> e = Either.cond(true, 1, "left value");
+        assertTrue(e.isRight());
+        assertEquals(new Integer(1), e.getRight());
+
+        Either<String, Integer> f = Either.cond(false, 1, "left value");
+        assertTrue(f.isLeft());
+        assertEquals("left value", f.getLeft());
     }
 }

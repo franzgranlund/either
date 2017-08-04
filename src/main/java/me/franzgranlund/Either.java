@@ -84,6 +84,21 @@ public interface Either<L, R> {
         }
     }
 
+    /**
+     * Creates an Either based on a boolean expression. A Right will be returned if predicate is true.
+     * A Left will be returned if predicate is false.
+     *
+     * @param predicate the predicate
+     * @param right     the right value
+     * @param left      the left value
+     * @param <L>       the type of the left value
+     * @param <R>       the type of the right value
+     * @return a new Either instance depending on the boolean expression provided by predicate
+     */
+    static <L, R> Either<L, R> cond(boolean predicate, R right, L left) {
+        return predicate ? right(right) : left(left);
+    }
+
     final class Right<L, R> implements Either<L, R> {
         private final R value;
 
