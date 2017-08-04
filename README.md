@@ -1,5 +1,7 @@
 # either
 
+[![Build Status](https://travis-ci.org/franzgranlund/either.svg?branch=master)](https://travis-ci.org/franzgranlund/either)
+
 ## Story
 Plenty of Either classes out there, but I found most of them too tedious. I needed a pragmatic Either that would keep the 
 client code somewhat clean.
