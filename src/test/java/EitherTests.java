@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import me.franzgranlund.Either;
+import io.github.franzgranlund.Either;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

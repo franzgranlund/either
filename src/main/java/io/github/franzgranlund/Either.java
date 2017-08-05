@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package me.franzgranlund;
+package io.github.franzgranlund;
 
 import java.util.NoSuchElementException;
 import java.util.Objects;
