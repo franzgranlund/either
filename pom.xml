@@ -7,6 +7,33 @@
     <groupId>me.franzgranlund</groupId>
     <artifactId>either</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <name>A pragmatic Either</name>
+    <description>A pragmatic Either for Java 8</description>
+    <url>https://github.com/franzgranlund/either</url>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Franz Granlund</name>
+            <email>franz.granlund@gmail.com</email>
+            <organization>Franz Granlund</organization>
+            <organizationUrl>https://github.com/franzgranlund</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/franzgranlund/either.git</connection>
+        <developerConnection>scm:git:ssh://github.com:franzgranlund/either.git</developerConnection>
+        <url>http://github.com/franzgranlund/either/tree/master</url>
+    </scm>
+
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
