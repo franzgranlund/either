@@ -68,7 +68,7 @@ public interface Either<L, R> {
     }
 
     /**
-     * Maps either the left or the right side of this Either
+     * Creates an new Either from the mapping of the left or the right side of this Either.
      *
      * @param leftMapper  maps the left value if this is a Left
      * @param rightMapper maps the right value if this is a Right
