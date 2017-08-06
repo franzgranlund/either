@@ -24,11 +24,14 @@
 
 package io.github.franzgranlund;
 
+import java.io.Serializable;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.function.Function;
 
-public interface Either<L, R> {
+public interface Either<L, R> extends Serializable {
+    long serialVersionUID = -42L;
+
     static <L, R> Either<L, R> right(final R right) {
         Objects.requireNonNull(right);
         return new Right<>(right);
@@ -100,6 +103,8 @@ public interface Either<L, R> {
     }
 
     final class Right<L, R> implements Either<L, R> {
+        private static final long serialVersionUID = 44L;
+
         private final R value;
 
         private Right(R value) {
@@ -138,6 +143,8 @@ public interface Either<L, R> {
     }
 
     final class Left<L, R> implements Either<L, R> {
+        private static final long serialVersionUID = 46L;
+
         private final L value;
 
         private Left(L value) {
