@@ -6,7 +6,7 @@
 
     <groupId>io.github.franzgranlund</groupId>
     <artifactId>either</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.1</version>
 
     <name>A pragmatic Either</name>
     <description>A pragmatic Either for Java 8</description>
