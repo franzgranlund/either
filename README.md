@@ -16,7 +16,7 @@ To get started you add `either` as a dependency to Maven:
 <dependency>
   <groupId>io.github.franzgranlund</groupId>
   <artifactId>either</artifactId>
-  <version>1.1</version>
+  <version>1.2</version>
 </dependency>
 ```
 
