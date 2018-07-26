@@ -27,6 +27,7 @@ package io.github.franzgranlund;
 import java.io.Serializable;
 import java.util.NoSuchElementException;
 import java.util.Objects;
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 public interface Either<L, R> extends Serializable {
@@ -67,6 +68,21 @@ public interface Either<L, R> extends Serializable {
             return rightMapper.apply(getRight());
         } else {
             return leftMapper.apply(getLeft());
+        }
+    }
+
+    /**
+     * Consumes either the left or the right side of this Either
+     *
+     * @param leftMapper  consumes the left value if this is a Left
+     * @param rightMapper consumes the right value if this is a Right
+     * @return void
+     */
+    default void consume(Consumer<? super L> leftMapper, Consumer<? super R> rightMapper) {
+        if (isRight()) {
+            rightMapper.accept(getRight());
+        } else {
+            leftMapper.accept(getLeft());
         }
     }
 

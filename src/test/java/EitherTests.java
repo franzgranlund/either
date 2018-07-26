@@ -29,6 +29,7 @@ import org.junit.jupiter.api.Test;
 import java.util.NoSuchElementException;
 import java.util.function.Function;
 
+import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -96,5 +97,15 @@ class EitherTests {
         Either<String, Integer> f = Either.cond(false, 1, "left value");
         assertTrue(f.isLeft());
         assertEquals("left value", f.getLeft());
+    }
+
+    @Test
+    @DisplayName("Tests the consume function")
+    void consumeTest() {
+        Either<String, Integer> r =  Either.right(1);
+        r.consume(s -> fail(), i -> {});
+
+        Either<String, Integer> l =  Either.left("left value");
+        l.consume(s -> {}, i -> fail());
     }
 }
