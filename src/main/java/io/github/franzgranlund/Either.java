@@ -76,7 +76,6 @@ public interface Either<L, R> extends Serializable {
      *
      * @param leftMapper  consumes the left value if this is a Left
      * @param rightMapper consumes the right value if this is a Right
-     * @return void
      */
     default void consume(Consumer<? super L> leftMapper, Consumer<? super R> rightMapper) {
         if (isRight()) {
