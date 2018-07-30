@@ -65,6 +65,9 @@ public class App
         if (condResult.isLeft()) {
             System.out.println("condResult is a " + condResult.getLeft().value);
         }
+
+        // Prints 'I'm sorry Dave, I'm afraid I can't do that'
+        compute(6).consume(System.out::println, rhv -> System.out.println("Batman"));
     }
 }
 ```
